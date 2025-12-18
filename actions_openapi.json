@@ -71,6 +71,7 @@
       "GenerateResponse": {
         "type": "object",
         "required": [
+          "output",
           "ok",
           "k",
           "n",
@@ -95,6 +96,10 @@
             "items": {
               "$ref": "#/components/schemas/Item"
             }
+          },
+          "output": {
+            "type": "string",
+            "description": "최종 출력 텍스트(번호 1..k). 이 문자열을 그대로 사용자에게 보여줄 것."
           }
         }
       },
