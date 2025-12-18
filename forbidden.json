@@ -2,19 +2,1195 @@
   {
     "fid": "F001",
     "movie": "Titanic",
-    "scene_keys": ["ship_tilt", "people_slide", "deck_fall"],
-    "trick_keys": ["stunt_rollers", "limited_tilt_set"]
+    "movie_aliases": [
+      "타이타닉",
+      "타이타닉(1997)",
+      "Titanic (1997)",
+      "타이타닉 1997"
+    ],
+    "scene_keys": [
+      "ship_tilt",
+      "people_slide",
+      "deck_fall"
+    ],
+    "trick_keys": [
+      "stunt_rollers",
+      "limited_tilt_set",
+      "rubber_props"
+    ]
   },
   {
     "fid": "F002",
     "movie": "The Matrix",
-    "scene_keys": ["rooftop", "bullet_dodge", "bullet_time"],
-    "trick_keys": ["ring_cameras", "frame_stitching"]
+    "movie_aliases": [
+      "매트릭스",
+      "The Matrix (1999)",
+      "매트릭스(1999)",
+      "TM"
+    ],
+    "scene_keys": [
+      "rooftop",
+      "bullet_dodge",
+      "bullet_time"
+    ],
+    "trick_keys": [
+      "ring_cameras",
+      "frame_stitching"
+    ]
   },
   {
     "fid": "F003",
     "movie": "Alien",
-    "scene_keys": ["chestburst", "meal_scene", "sudden_reveal"],
-    "trick_keys": ["hidden_rig", "blood_jet", "actor_surprise"]
+    "movie_aliases": [
+      "에일리언",
+      "Alien (1979)",
+      "에이리언",
+      "ALN"
+    ],
+    "scene_keys": [
+      "chestburst",
+      "meal_scene",
+      "sudden_reveal"
+    ],
+    "trick_keys": [
+      "hidden_rig",
+      "blood_jet",
+      "actor_surprise"
+    ]
+  },
+  {
+    "fid": "F004",
+    "movie": "Baby Driver",
+    "movie_aliases": [
+      "베이비 드라이버",
+      "Baby Driver (2017)",
+      "BD"
+    ],
+    "scene_keys": [
+      "opening_beat_chase"
+    ],
+    "trick_keys": [
+      "beat_synced_animatic",
+      "on_set_playback",
+      "sound_action_timing"
+    ]
+  },
+  {
+    "fid": "F005",
+    "movie": "The Shining",
+    "movie_aliases": [
+      "샤이닝",
+      "The Shining (1980)",
+      "SHINING"
+    ],
+    "scene_keys": [
+      "elevator_blood_flood"
+    ],
+    "trick_keys": [
+      "practical_blood_flood",
+      "mini_set_flood",
+      "one_take_setup"
+    ]
+  },
+  {
+    "fid": "F006",
+    "movie": "Raiders of the Lost Ark",
+    "movie_aliases": [
+      "레이더스",
+      "레이더스: 잃어버린 성궤를 찾아서",
+      "인디아나 존스: 레이더스",
+      "Indiana Jones 1",
+      "Raiders (1981)"
+    ],
+    "scene_keys": [
+      "rolling_boulder_escape",
+      "truck_under_drag"
+    ],
+    "trick_keys": [
+      "fiberglass_boulder_prop",
+      "controlled_track",
+      "under_truck_rig",
+      "actor_stunt_mix"
+    ]
+  },
+  {
+    "fid": "F007",
+    "movie": "The Blues Brothers",
+    "movie_aliases": [
+      "블루스 브라더스",
+      "Blues Brothers (1980)",
+      "TBB"
+    ],
+    "scene_keys": [
+      "mass_car_pileup"
+    ],
+    "trick_keys": [
+      "real_car_crash",
+      "jump_ramps",
+      "on_set_repair_rotation"
+    ]
+  },
+  {
+    "fid": "F008",
+    "movie": "Oppenheimer",
+    "movie_aliases": [
+      "오펜하이머",
+      "Oppenheimer (2023)",
+      "OPP"
+    ],
+    "scene_keys": [
+      "trinity_test_explosion"
+    ],
+    "trick_keys": [
+      "practical_explosion_tests",
+      "explosion_layer_composite",
+      "no_cg_policy"
+    ]
+  },
+  {
+    "fid": "F009",
+    "movie": "Ong-Bak",
+    "movie_aliases": [
+      "옹박",
+      "Ong-Bak (2003)",
+      "ONGBAK"
+    ],
+    "scene_keys": [
+      "gas_station_fire_fight"
+    ],
+    "trick_keys": [
+      "practical_fire_stunts",
+      "close_flame_performance",
+      "safety_fire_team"
+    ]
+  },
+  {
+    "fid": "F010",
+    "movie": "Inception",
+    "movie_aliases": [
+      "인셉션",
+      "Inception (2010)",
+      "INC"
+    ],
+    "scene_keys": [
+      "rotating_hallway_fight"
+    ],
+    "trick_keys": [
+      "rotating_set_drum",
+      "practical_rotation_lighting",
+      "stunt_in_rotating_set"
+    ]
+  },
+  {
+    "fid": "F011",
+    "movie": "Tenet",
+    "movie_aliases": [
+      "테넷",
+      "Tenet (2020)",
+      "TENET"
+    ],
+    "scene_keys": [
+      "real_747_crash"
+    ],
+    "trick_keys": [
+      "real_aircraft_purchase",
+      "single_take_multi_camera",
+      "practical_collision_fx"
+    ]
+  },
+  {
+    "fid": "F012",
+    "movie": "Terminator 2: Judgment Day",
+    "movie_aliases": [
+      "터미네이터2",
+      "터미네이터 2",
+      "T2",
+      "Terminator 2",
+      "T2: Judgment Day"
+    ],
+    "scene_keys": [
+      "t2_mirror_scene"
+    ],
+    "trick_keys": [
+      "twin_double",
+      "fake_mirror_frame",
+      "animatronic_head_dummy"
+    ]
+  },
+  {
+    "fid": "F013",
+    "movie": "Interstellar",
+    "movie_aliases": [
+      "인터스텔라",
+      "Interstellar (2014)",
+      "INTER"
+    ],
+    "scene_keys": [
+      "tars_case_practical_robot"
+    ],
+    "trick_keys": [
+      "practical_robot_puppet",
+      "puppeteer_cleanup",
+      "heavy_prop_inertia"
+    ]
+  },
+  {
+    "fid": "F014",
+    "movie": "Jurassic Park",
+    "movie_aliases": [
+      "주라기 공원",
+      "쥬라기 공원",
+      "Jurassic Park (1993)",
+      "JP"
+    ],
+    "scene_keys": [
+      "trex_rain_attack",
+      "kitchen_raptors_chase",
+      "water_cup_ripple",
+      "trex_roar_sound"
+    ],
+    "trick_keys": [
+      "animatronic_trex",
+      "rain_water_weight_issue",
+      "raptor_suit_mix",
+      "kitchen_animatronics",
+      "cup_ripple_string_rig",
+      "sound_mix_layering"
+    ]
+  },
+  {
+    "fid": "F015",
+    "movie": "Oldboy",
+    "movie_aliases": [
+      "올드보이",
+      "Oldboy (2003)",
+      "OB"
+    ],
+    "scene_keys": [
+      "hallway_hammer_longtake"
+    ],
+    "trick_keys": [
+      "side_scroll_longtake",
+      "fatigue_realism",
+      "limited_cuts"
+    ]
+  },
+  {
+    "fid": "F016",
+    "movie": "Children of Men",
+    "movie_aliases": [
+      "칠드런 오브 맨",
+      "Children of Men (2006)",
+      "COM"
+    ],
+    "scene_keys": [
+      "car_ambush_longtake"
+    ],
+    "trick_keys": [
+      "rigged_car_roof",
+      "camera_rotation_rig",
+      "seat_choreography"
+    ]
+  },
+  {
+    "fid": "F017",
+    "movie": "Scott Pilgrim vs. the World",
+    "movie_aliases": [
+      "스콧 필그림",
+      "스콧 필그림 vs 더 월드",
+      "Scott Pilgrim (2010)",
+      "SPVTW"
+    ],
+    "scene_keys": [
+      "box_to_trashcan_perfect_throw"
+    ],
+    "trick_keys": [
+      "practical_repeat_takes",
+      "no_cg_gag"
+    ]
+  },
+  {
+    "fid": "F018",
+    "movie": "The Exorcist",
+    "movie_aliases": [
+      "엑소시스트",
+      "The Exorcist (1973)",
+      "EXO"
+    ],
+    "scene_keys": [
+      "cold_breath_room"
+    ],
+    "trick_keys": [
+      "refrigerated_set",
+      "subzero_temperature"
+    ]
+  },
+  {
+    "fid": "F019",
+    "movie": "Jaws",
+    "movie_aliases": [
+      "죠스",
+      "Jaws (1975)",
+      "JAWS"
+    ],
+    "scene_keys": [
+      "unseen_shark_tension",
+      "sunken_boat_head_jump"
+    ],
+    "trick_keys": [
+      "broken_mech_shark_pivot",
+      "music_edit_suspense",
+      "pool_reshoot_jump_scare"
+    ]
+  },
+  {
+    "fid": "F020",
+    "movie": "Blade Runner",
+    "movie_aliases": [
+      "블레이드 러너",
+      "Blade Runner (1982)",
+      "BR"
+    ],
+    "scene_keys": [
+      "future_city_opening"
+    ],
+    "trick_keys": [
+      "miniature_city",
+      "multi_exposure",
+      "smoke_light_layers"
+    ]
+  },
+  {
+    "fid": "F021",
+    "movie": "1917",
+    "movie_aliases": [
+      "1917",
+      "일구일칠",
+      "1917 (2019)"
+    ],
+    "scene_keys": [
+      "one_shot_war_film_style"
+    ],
+    "trick_keys": [
+      "relay_camera_rig",
+      "digital_stitching",
+      "hidden_cuts"
+    ]
+  },
+  {
+    "fid": "F022",
+    "movie": "Mad Max: Fury Road",
+    "movie_aliases": [
+      "매드 맥스: 분노의 도로",
+      "매드맥스: 분노의 도로",
+      "Mad Max Fury Road",
+      "MMFR",
+      "Fury Road"
+    ],
+    "scene_keys": [
+      "doof_warrior_flame_guitar",
+      "polecat_stunts"
+    ],
+    "trick_keys": [
+      "flamethrower_guitar_prop",
+      "wire_harness_on_vehicle",
+      "pole_rig_swing",
+      "wire_removal"
+    ]
+  },
+  {
+    "fid": "F023",
+    "movie": "The Revenant",
+    "movie_aliases": [
+      "레버넌트",
+      "The Revenant (2015)",
+      "REV"
+    ],
+    "scene_keys": [
+      "bear_attack_sequence"
+    ],
+    "trick_keys": [
+      "stunt_wire_assist",
+      "mocap_bear",
+      "physical_drag_performance"
+    ]
+  },
+  {
+    "fid": "F024",
+    "movie": "Star Wars: The Empire Strikes Back",
+    "movie_aliases": [
+      "스타워즈: 제국의 역습",
+      "제국의 역습",
+      "The Empire Strikes Back",
+      "ESB"
+    ],
+    "scene_keys": [
+      "hoth_atat_stopmotion"
+    ],
+    "trick_keys": [
+      "stop_motion_models",
+      "miniature_explosions",
+      "snow_set_miniatures"
+    ]
+  },
+  {
+    "fid": "F025",
+    "movie": "Pirates of the Caribbean: Dead Man's Chest",
+    "movie_aliases": [
+      "캐리비안의 해적: 망자의 함",
+      "망자의 함",
+      "Dead Man's Chest",
+      "POTC2",
+      "데이비 존스"
+    ],
+    "scene_keys": [
+      "waterwheel_swordfight",
+      "davy_jones_tentacles"
+    ],
+    "trick_keys": [
+      "fullsize_waterwheel_set",
+      "stunt_on_rotating_set",
+      "cg_background_replace",
+      "tentacle_sim_physics"
+    ]
+  },
+  {
+    "fid": "F026",
+    "movie": "Saving Private Ryan",
+    "movie_aliases": [
+      "라이언 일병 구하기",
+      "Saving Private Ryan (1998)",
+      "SPR"
+    ],
+    "scene_keys": [
+      "omaha_beach_landing"
+    ],
+    "trick_keys": [
+      "practical_blast_squibs",
+      "large_scale_extras",
+      "embedded_fx_rigs"
+    ]
+  },
+  {
+    "fid": "F027",
+    "movie": "The Wizard of Oz",
+    "movie_aliases": [
+      "오즈의 마법사",
+      "The Wizard of Oz (1939)",
+      "WOZ"
+    ],
+    "scene_keys": [
+      "kansas_tornado"
+    ],
+    "trick_keys": [
+      "muslin_sock_tornado",
+      "miniature_farm_set",
+      "dust_straw_fx"
+    ]
+  },
+  {
+    "fid": "F028",
+    "movie": "The Impossible",
+    "movie_aliases": [
+      "더 임파서블",
+      "The Impossible (2012)",
+      "IMPOSSIBLE"
+    ],
+    "scene_keys": [
+      "tsunami_resort_destruction",
+      "underwater_turbulence"
+    ],
+    "trick_keys": [
+      "miniature_resort_tank",
+      "high_pressure_water_push",
+      "debris_tank_sequence"
+    ]
+  },
+  {
+    "fid": "F029",
+    "movie": "Independence Day",
+    "movie_aliases": [
+      "인디펜던스 데이",
+      "Independence Day (1996)",
+      "ID4"
+    ],
+    "scene_keys": [
+      "white_house_explosion"
+    ],
+    "trick_keys": [
+      "white_house_miniature_blast",
+      "high_speed_photography"
+    ]
+  },
+  {
+    "fid": "F030",
+    "movie": "Dunkirk",
+    "movie_aliases": [
+      "덩케르크",
+      "Dunkirk (2017)",
+      "DK"
+    ],
+    "scene_keys": [
+      "beach_crowd_boost",
+      "distant_fleet_illusion"
+    ],
+    "trick_keys": [
+      "cardboard_soldiers",
+      "mixed_scale_ships",
+      "fog_perspective_trick"
+    ]
+  },
+  {
+    "fid": "F031",
+    "movie": "Pan's Labyrinth",
+    "movie_aliases": [
+      "판의 미로",
+      "Pan's Labyrinth (2006)",
+      "PANS"
+    ],
+    "scene_keys": [
+      "faun_pale_man_creatures"
+    ],
+    "trick_keys": [
+      "practical_suits_makeup",
+      "servo_face_controls"
+    ]
+  },
+  {
+    "fid": "F032",
+    "movie": "Total Recall (1990)",
+    "movie_aliases": [
+      "토탈 리콜",
+      "토탈리콜",
+      "Total Recall 1990",
+      "TR1990"
+    ],
+    "scene_keys": [
+      "kuato_reveal",
+      "two_weeks_mask_split"
+    ],
+    "trick_keys": [
+      "animatronic_puppet_kuato",
+      "multi_puppeteer_control",
+      "mechanical_head_mask"
+    ]
+  },
+  {
+    "fid": "F033",
+    "movie": "RoboCop",
+    "movie_aliases": [
+      "로보캅",
+      "RoboCop (1987)",
+      "RC"
+    ],
+    "scene_keys": [
+      "toxic_melt_villain"
+    ],
+    "trick_keys": [
+      "latex_layers_makeup",
+      "crash_dummy_gore"
+    ]
+  },
+  {
+    "fid": "F034",
+    "movie": "Who Framed Roger Rabbit",
+    "movie_aliases": [
+      "누가 로저 래빗을 모함했나",
+      "로저 래빗",
+      "Who Framed Roger Rabbit (1988)",
+      "WFRR"
+    ],
+    "scene_keys": [
+      "toon_live_action_interaction"
+    ],
+    "trick_keys": [
+      "hidden_wires_mech_arms",
+      "practical_prop_moves",
+      "animation_overlay"
+    ]
+  },
+  {
+    "fid": "F035",
+    "movie": "Scream",
+    "movie_aliases": [
+      "스크림",
+      "Scream (1996)",
+      "SCREAM"
+    ],
+    "scene_keys": [
+      "umbrella_stab_reaction"
+    ],
+    "trick_keys": [
+      "prop_contact_accident",
+      "unexpected_pain_reaction"
+    ]
+  },
+  {
+    "fid": "F036",
+    "movie": "The Dark Knight",
+    "movie_aliases": [
+      "다크 나이트",
+      "다크나이트",
+      "The Dark Knight (2008)",
+      "TDK"
+    ],
+    "scene_keys": [
+      "interrogation_room_violence"
+    ],
+    "trick_keys": [
+      "actor_self_impact",
+      "set_damage_real"
+    ]
+  },
+  {
+    "fid": "F037",
+    "movie": "Apollo 13",
+    "movie_aliases": [
+      "아폴로 13",
+      "Apollo 13 (1995)",
+      "A13"
+    ],
+    "scene_keys": [
+      "zero_g_spacecraft_interior"
+    ],
+    "trick_keys": [
+      "kc135_zero_g_flights",
+      "stitched_segments"
+    ]
+  },
+  {
+    "fid": "F038",
+    "movie": "Cabin Fever",
+    "movie_aliases": [
+      "캐빈 피버",
+      "Cabin Fever (2002)",
+      "CF"
+    ],
+    "scene_keys": [
+      "leg_shaving_skin_peel"
+    ],
+    "trick_keys": [
+      "latex_skin_layers",
+      "foley_gore_sound"
+    ]
+  },
+  {
+    "fid": "F039",
+    "movie": "Bring Her Back",
+    "movie_aliases": [
+      "브링 허 백",
+      "Bring Her Back",
+      "BHB"
+    ],
+    "scene_keys": [
+      "knife_chew_table_gnaw"
+    ],
+    "trick_keys": [
+      "edible_prop_table",
+      "foam_rubber_knife",
+      "sound_effect_mix"
+    ]
+  },
+  {
+    "fid": "F040",
+    "movie": "The Thing (1982)",
+    "movie_aliases": [
+      "더 씽",
+      "The Thing",
+      "The Thing (1982)",
+      "THING82"
+    ],
+    "scene_keys": [
+      "chest_mouth_arm_bite"
+    ],
+    "trick_keys": [
+      "mechanical_jaw_rig",
+      "blood_squib_fx",
+      "fake_torso_set"
+    ]
+  },
+  {
+    "fid": "F041",
+    "movie": "The Lord of the Rings: The Two Towers",
+    "movie_aliases": [
+      "반지의 제왕: 두 개의 탑",
+      "두 개의 탑",
+      "The Two Towers",
+      "TTT",
+      "LOTR2"
+    ],
+    "scene_keys": [
+      "rohan_riders_charge",
+      "gollum_motion_capture"
+    ],
+    "trick_keys": [
+      "bearded_women_extras",
+      "motion_capture_performance",
+      "facial_refine_reshoots"
+    ]
+  },
+  {
+    "fid": "F042",
+    "movie": "The Lord of the Rings: The Return of the King",
+    "movie_aliases": [
+      "반지의 제왕: 왕의 귀환",
+      "왕의 귀환",
+      "Return of the King",
+      "ROTK",
+      "LOTR3"
+    ],
+    "scene_keys": [
+      "gondor_beacons"
+    ],
+    "trick_keys": [
+      "practical_beacons",
+      "cg_beacon_chain"
+    ]
+  },
+  {
+    "fid": "F043",
+    "movie": "Spider-Man (2002)",
+    "movie_aliases": [
+      "스파이더맨",
+      "스파이더맨(2002)",
+      "Spider-Man 2002",
+      "SM2002"
+    ],
+    "scene_keys": [
+      "cafeteria_tray_catch"
+    ],
+    "trick_keys": [
+      "glued_food_props",
+      "many_take_practical"
+    ]
+  },
+  {
+    "fid": "F044",
+    "movie": "Steamboat Bill, Jr.",
+    "movie_aliases": [
+      "스팀보트 빌 주니어",
+      "Steamboat Bill, Jr.",
+      "SBJ"
+    ],
+    "scene_keys": [
+      "house_facade_fall_stunt"
+    ],
+    "trick_keys": [
+      "real_wall_drop",
+      "window_mark_precision"
+    ]
+  },
+  {
+    "fid": "F045",
+    "movie": "2001: A Space Odyssey",
+    "movie_aliases": [
+      "2001: 스페이스 오디세이",
+      "스페이스 오디세이",
+      "2001: A Space Odyssey",
+      "2001"
+    ],
+    "scene_keys": [
+      "floating_pen",
+      "rotating_corridor_walk"
+    ],
+    "trick_keys": [
+      "acrylic_plate_pen",
+      "rotating_set_with_fixed_camera"
+    ]
+  },
+  {
+    "fid": "F046",
+    "movie": "The Fly (1986)",
+    "movie_aliases": [
+      "플라이",
+      "The Fly (1986)",
+      "FLY86"
+    ],
+    "scene_keys": [
+      "body_transformation_sequence"
+    ],
+    "trick_keys": [
+      "stage_makeup_progression",
+      "suit_puppet_final"
+    ]
+  },
+  {
+    "fid": "F047",
+    "movie": "Pacific Rim",
+    "movie_aliases": [
+      "퍼시픽 림",
+      "Pacific Rim (2013)",
+      "PR"
+    ],
+    "scene_keys": [
+      "jaeger_fist_office_smash"
+    ],
+    "trick_keys": [
+      "miniature_office_set",
+      "pneumatic_punch_rig",
+      "cg_background_comp"
+    ]
+  },
+  {
+    "fid": "F048",
+    "movie": "Harry Potter and the Philosopher's Stone",
+    "movie_aliases": [
+      "해리 포터와 마법사의 돌",
+      "마법사의 돌",
+      "Harry Potter 1",
+      "HP1",
+      "Philosopher's Stone"
+    ],
+    "scene_keys": [
+      "great_hall_floating_candles"
+    ],
+    "trick_keys": [
+      "wire_hung_candles",
+      "safety_switch_to_cg"
+    ]
+  },
+  {
+    "fid": "F049",
+    "movie": "The Matrix Reloaded",
+    "movie_aliases": [
+      "매트릭스 리로디드",
+      "Matrix Reloaded",
+      "TMR",
+      "Reloaded"
+    ],
+    "scene_keys": [
+      "highway_chase_set"
+    ],
+    "trick_keys": [
+      "built_freeway_set",
+      "real_vehicles_stunts",
+      "speed_ramp_frame_rate"
+    ]
+  },
+  {
+    "fid": "F050",
+    "movie": "Eternal Sunshine of the Spotless Mind",
+    "movie_aliases": [
+      "이터널 선샤인",
+      "Eternal Sunshine",
+      "ESOTSM"
+    ],
+    "scene_keys": [
+      "memory_collapse_set_swaps"
+    ],
+    "trick_keys": [
+      "practical_set_swaps",
+      "lighting_switch_misdirection",
+      "in_camera_transitions"
+    ]
+  },
+  {
+    "fid": "F051",
+    "movie": "Indiana Jones and the Last Crusade",
+    "movie_aliases": [
+      "인디아나 존스: 최후의 성전",
+      "최후의 성전",
+      "Last Crusade",
+      "IJ3",
+      "성배"
+    ],
+    "scene_keys": [
+      "invisible_bridge_forced_perspective"
+    ],
+    "trick_keys": [
+      "forced_perspective_paint",
+      "locked_camera_lens"
+    ]
+  },
+  {
+    "fid": "F052",
+    "movie": "Aliens",
+    "movie_aliases": [
+      "에이리언 2",
+      "에이리언2",
+      "Aliens (1986)",
+      "ALIENS",
+      "A2"
+    ],
+    "scene_keys": [
+      "power_loader_vs_queen"
+    ],
+    "trick_keys": [
+      "fullsize_puppets",
+      "miniature_models",
+      "multi_operator_animatronic"
+    ]
+  },
+  {
+    "fid": "F053",
+    "movie": "The General (1926)",
+    "movie_aliases": [
+      "더 제너럴",
+      "The General (1926)",
+      "GENERAL"
+    ],
+    "scene_keys": [
+      "train_bridge_crash"
+    ],
+    "trick_keys": [
+      "real_train_drop",
+      "one_shot_stunt"
+    ]
+  },
+  {
+    "fid": "F054",
+    "movie": "The French Connection",
+    "movie_aliases": [
+      "프렌치 커넥션",
+      "The French Connection (1971)",
+      "TFC"
+    ],
+    "scene_keys": [
+      "unauthorized_city_chase"
+    ],
+    "trick_keys": [
+      "real_traffic_filming",
+      "car_mounted_camera",
+      "minimal_permit_control"
+    ]
+  },
+  {
+    "fid": "F055",
+    "movie": "Once Upon a Time in... Hollywood",
+    "movie_aliases": [
+      "원스 어폰 어 타임 인… 할리우드",
+      "원스 어폰 어 타임 인 할리우드",
+      "Once Upon a Time in Hollywood",
+      "OUATIH"
+    ],
+    "scene_keys": [
+      "drive_in_miniature_transition"
+    ],
+    "trick_keys": [
+      "miniature_swap_transition",
+      "practical_lit_models"
+    ]
+  },
+  {
+    "fid": "F056",
+    "movie": "Goodfellas",
+    "movie_aliases": [
+      "굿펠라스",
+      "Goodfellas (1990)",
+      "GF"
+    ],
+    "scene_keys": [
+      "copacabana_entry_longtake"
+    ],
+    "trick_keys": [
+      "steadicam_choreography",
+      "extras_blocking",
+      "timed_props_music"
+    ]
+  },
+  {
+    "fid": "F057",
+    "movie": "Forrest Gump",
+    "movie_aliases": [
+      "포레스트 검프",
+      "Forrest Gump (1994)",
+      "FG"
+    ],
+    "scene_keys": [
+      "historical_composite_scenes"
+    ],
+    "trick_keys": [
+      "archive_footage_comp",
+      "digital_face_mouth_sync",
+      "actor_insert_composite"
+    ]
+  },
+  {
+    "fid": "F058",
+    "movie": "The Jungle Book (2016)",
+    "movie_aliases": [
+      "정글북",
+      "The Jungle Book (2016)",
+      "JUNGLEBOOK"
+    ],
+    "scene_keys": [
+      "actor_only_live_action"
+    ],
+    "trick_keys": [
+      "virtual_production_previs",
+      "cg_environment_animals",
+      "render_farm_pipeline"
+    ]
+  },
+  {
+    "fid": "F059",
+    "movie": "Life of Pi",
+    "movie_aliases": [
+      "라이프 오브 파이",
+      "Life of Pi (2012)",
+      "LOP"
+    ],
+    "scene_keys": [
+      "ocean_tiger_vfx"
+    ],
+    "trick_keys": [
+      "water_simulation_pipeline",
+      "wet_fur_lighting",
+      "high_vfx_shot_ratio"
+    ]
+  },
+  {
+    "fid": "F060",
+    "movie": "Gravity",
+    "movie_aliases": [
+      "그래비티",
+      "Gravity (2013)",
+      "GRAV"
+    ],
+    "scene_keys": [
+      "led_lightbox_space_lighting"
+    ],
+    "trick_keys": [
+      "led_lightbox_capture",
+      "practical_face_lighting_for_vfx"
+    ]
+  },
+  {
+    "fid": "F061",
+    "movie": "War for the Planet of the Apes",
+    "movie_aliases": [
+      "혹성탈출: 종의 전쟁",
+      "혹성탈출 종의 전쟁",
+      "War for the Planet of the Apes",
+      "WFA"
+    ],
+    "scene_keys": [
+      "emotion_ape_cg"
+    ],
+    "trick_keys": [
+      "advanced_fur_sim",
+      "facial_mocap_refine",
+      "snow_wetness_render"
+    ]
+  },
+  {
+    "fid": "F062",
+    "movie": "The Irishman",
+    "movie_aliases": [
+      "아이리시맨",
+      "The Irishman (2019)",
+      "IRISHMAN"
+    ],
+    "scene_keys": [
+      "markerless_deaging_rig"
+    ],
+    "trick_keys": [
+      "multi_camera_face_capture",
+      "markerless_tracking"
+    ]
+  },
+  {
+    "fid": "F063",
+    "movie": "The Curious Case of Benjamin Button",
+    "movie_aliases": [
+      "벤자민 버튼의 시간은 거꾸로 간다",
+      "벤자민 버튼",
+      "Benjamin Button",
+      "CCBB"
+    ],
+    "scene_keys": [
+      "digital_head_early_benjamin"
+    ],
+    "trick_keys": [
+      "digital_head_composite",
+      "performance_capture_face"
+    ]
+  },
+  {
+    "fid": "F064",
+    "movie": "Gemini Man",
+    "movie_aliases": [
+      "제미니 맨",
+      "Gemini Man (2019)",
+      "GM"
+    ],
+    "scene_keys": [
+      "digital_human_120fps"
+    ],
+    "trick_keys": [
+      "high_fps_scrutiny",
+      "full_digital_human",
+      "eye_skin_subsurface_detail"
+    ]
+  },
+  {
+    "fid": "F065",
+    "movie": "Blade Runner 2049",
+    "movie_aliases": [
+      "블레이드 러너 2049",
+      "Blade Runner 2049",
+      "BR2049"
+    ],
+    "scene_keys": [
+      "hidden_vfx_city_air"
+    ],
+    "trick_keys": [
+      "vfx_blend_not_showy",
+      "atmosphere_layers",
+      "integrated_comp"
+    ]
+  },
+  {
+    "fid": "F066",
+    "movie": "Tron: Legacy",
+    "movie_aliases": [
+      "트론: 레거시",
+      "Tron Legacy",
+      "TRON2",
+      "TL"
+    ],
+    "scene_keys": [
+      "clu_digital_face"
+    ],
+    "trick_keys": [
+      "digital_face_long_shots",
+      "early_digital_human_limits"
+    ]
+  },
+  {
+    "fid": "F067",
+    "movie": "The Social Network",
+    "movie_aliases": [
+      "소셜 네트워크",
+      "The Social Network (2010)",
+      "TSN"
+    ],
+    "scene_keys": [
+      "winklevoss_face_transfer"
+    ],
+    "trick_keys": [
+      "face_retargeting",
+      "body_double_acting",
+      "seamless_comp"
+    ]
+  },
+  {
+    "fid": "F068",
+    "movie": "The Lord of the Rings: The Fellowship of the Ring",
+    "movie_aliases": [
+      "반지의 제왕: 반지 원정대",
+      "반지원정대",
+      "Fellowship of the Ring",
+      "FOTR",
+      "LOTR1"
+    ],
+    "scene_keys": [
+      "bigature_miniatures"
+    ],
+    "trick_keys": [
+      "bigature_large_miniatures",
+      "practical_city_models",
+      "smoke_light_comp"
+    ]
   }
 ]
