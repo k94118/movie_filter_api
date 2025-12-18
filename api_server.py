@@ -164,3 +164,22 @@ def _actions_openapi_spec():
 @app.get("/actions_openapi.json", include_in_schema=False)
 def actions_openapi():
     return JSONResponse(_actions_openapi_spec())
+
+# --- Actions 전용: 모델이 요약하지 않도록 "output만" 반환 ---
+@app.post("/generate_actions")
+def generate_actions(req: GenerateReq, authorization: str | None = Header(default=None)):
+    # 기존 /generate 로직을 그대로 재사용
+    resp = generate(req, authorization)
+
+    out = resp.get("output", "")
+    lines = out.split("\n") if out else []
+
+    # Actions는 이 응답만 보고 그대로 출력하도록 유도하기 쉽다
+    return {
+        "ok": bool(resp.get("ok", True)),
+        "k": resp.get("k", req.k),
+        "n": resp.get("n", getattr(req, "n", None)),
+        "count": resp.get("count", len(lines)),
+        "output": out,
+        "lines": lines,
+    }

@@ -1,0 +1,58 @@
+{
+  "openapi": "3.1.1",
+  "info": { "title": "Movie Filter API (Actions)", "version": "1.0.0" },
+  "servers": [{ "url": "https://movie-filter-api.onrender.com" }],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": { "type": "http", "scheme": "bearer" }
+    },
+    "schemas": {
+      "GenerateRequest": {
+        "type": "object",
+        "required": ["style_hint"],
+        "properties": {
+          "style_hint": { "type": "string", "maxLength": 500 },
+          "k": { "type": "integer", "minimum": 1, "maximum": 10, "default": 10 },
+          "n": { "type": "integer", "minimum": 1, "maximum": 80, "default": 10 }
+        }
+      },
+      "GenerateActionsResponse": {
+        "type": "object",
+        "required": ["ok", "k", "n", "count", "output", "lines"],
+        "properties": {
+          "ok": { "type": "boolean" },
+          "k": { "type": "integer" },
+          "n": { "type": "integer" },
+          "count": { "type": "integer" },
+          "output": { "type": "string", "description": "번호 1..k 전체 텍스트. 이 문자열을 그대로 출력." },
+          "lines": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "output의 줄 단위 배열(1..k)."
+          }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/generate_actions": {
+      "post": {
+        "operationId": "generate_actions",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GenerateRequest" } } }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": { "application/json": { "schema": { "$ref": "#/components/schemas/GenerateActionsResponse" } } }
+          },
+          "401": { "description": "Missing Authorization" },
+          "403": { "description": "Invalid API key" },
+          "422": { "description": "Validation error" }
+        }
+      }
+    }
+  }
+}
