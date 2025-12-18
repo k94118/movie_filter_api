@@ -1,55 +1,112 @@
 {
-  "openapi": "3.0.2",
+  "openapi": "3.1.0",
   "info": {
     "title": "Movie Filter API (Actions)",
     "version": "1.0.0"
   },
   "servers": [
-    { "url": "https://movie-filter-api.onrender.com" }
+    {
+      "url": "https://movie-filter-api.onrender.com"
+    }
   ],
   "components": {
     "securitySchemes": {
-      "bearerAuth": { "type": "http", "scheme": "bearer" }
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
     },
     "schemas": {
       "GenerateRequest": {
         "type": "object",
-        "required": ["style_hint"],
+        "required": [
+          "style_hint"
+        ],
         "properties": {
-          "style_hint": { "type": "string", "maxLength": 500 },
-          "k": { "type": "integer", "minimum": 1, "maximum": 10, "default": 10 },
-          "n": { "type": "integer", "minimum": 1, "maximum": 80, "default": 10 }
+          "style_hint": {
+            "type": "string",
+            "maxLength": 500
+          },
+          "k": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "default": 10
+          },
+          "n": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 80,
+            "default": 10
+          }
         }
       },
       "Item": {
         "type": "object",
-        "required": ["movie", "scene", "behind", "vibe_point"],
+        "required": [
+          "movie",
+          "scene",
+          "behind",
+          "vibe_point"
+        ],
         "properties": {
-          "movie": { "type": "string", "maxLength": 80 },
-          "scene": { "type": "string", "maxLength": 140 },
-          "behind": { "type": "string", "maxLength": 160 },
-          "vibe_point": { "type": "string", "maxLength": 120 }
+          "movie": {
+            "type": "string",
+            "maxLength": 80
+          },
+          "scene": {
+            "type": "string",
+            "maxLength": 140
+          },
+          "behind": {
+            "type": "string",
+            "maxLength": 160
+          },
+          "vibe_point": {
+            "type": "string",
+            "maxLength": 120
+          }
         }
       },
       "GenerateResponse": {
         "type": "object",
-        "required": ["ok", "k", "n", "count", "items"],
+        "required": [
+          "ok",
+          "k",
+          "n",
+          "count",
+          "items"
+        ],
         "properties": {
-          "ok": { "type": "boolean" },
-          "k": { "type": "integer" },
-          "n": { "type": "integer" },
-          "count": { "type": "integer" },
+          "ok": {
+            "type": "boolean"
+          },
+          "k": {
+            "type": "integer"
+          },
+          "n": {
+            "type": "integer"
+          },
+          "count": {
+            "type": "integer"
+          },
           "items": {
             "type": "array",
-            "items": { "$ref": "#/components/schemas/Item" }
+            "items": {
+              "$ref": "#/components/schemas/Item"
+            }
           }
         }
       },
       "HealthResponse": {
         "type": "object",
-        "required": ["ok"],
+        "required": [
+          "ok"
+        ],
         "properties": {
-          "ok": { "type": "boolean" }
+          "ok": {
+            "type": "boolean"
+          }
         }
       }
     }
@@ -63,7 +120,9 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/HealthResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/HealthResponse"
+                }
               }
             }
           }
@@ -73,12 +132,18 @@
     "/generate": {
       "post": {
         "operationId": "generate",
-        "security": [{ "bearerAuth": [] }],
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/GenerateRequest" }
+              "schema": {
+                "$ref": "#/components/schemas/GenerateRequest"
+              }
             }
           }
         },
@@ -87,13 +152,21 @@
             "description": "OK",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/GenerateResponse" }
+                "schema": {
+                  "$ref": "#/components/schemas/GenerateResponse"
+                }
               }
             }
           },
-          "401": { "description": "Missing Authorization" },
-          "403": { "description": "Invalid API key" },
-          "422": { "description": "Validation error" }
+          "401": {
+            "description": "Missing Authorization"
+          },
+          "403": {
+            "description": "Invalid API key"
+          },
+          "422": {
+            "description": "Validation error"
+          }
         }
       }
     }
