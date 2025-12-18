@@ -56,8 +56,7 @@ def _clip(s: str, limit: int) -> str:
 class GenerateReq(BaseModel):
     style_hint: str = Field(..., description="원하는 분위기/느낌 요약")
     k: int = Field(10, ge=1, le=10, description="최종 출력 개수 (기본 10)")
-    n: int = Field(30, ge=10, le=80, description="후보 생성 개수 (기본 30, 최소 10)")
-
+    n: int = Field(10, ge=1, le=80, description="후보 생성 개수 (입력 1~80 허용, 서버에서 최소 10으로 보정)")
 @app.get("/health")
 def health():
     return {"ok": True}
@@ -69,6 +68,8 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
     if len(req.style_hint or "") > MAX_STYLE_HINT_CHARS:
         raise HTTPException(status_code=422, detail=f"style_hint too long (max {MAX_STYLE_HINT_CHARS} chars)")
 
+    n_eff = max(req.n, 10)
+
     forbidden = load_forbidden("forbidden.json")
     forbidden_titles = _build_forbidden_title_set(forbidden)
 
@@ -77,7 +78,7 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
     tries = 0
     while tries < 4 and len(safe_pool) < 120:
         tries += 1
-        cands = generate_candidates(req.style_hint, n=req.n)
+        cands = generate_candidates(req.style_hint, n=n_eff)
         safe_pool += filter_candidates(cands, forbidden)
         if len(safe_pool) > 200:
             safe_pool = safe_pool[:200]
@@ -115,7 +116,7 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
     resp = {
         "ok": True,
         "k": req.k,
-        "n": req.n,
+        "n": n_eff,
         "count": len(items),
         "items": items,
     }
