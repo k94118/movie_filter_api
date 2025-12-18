@@ -118,11 +118,20 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
             "vibe_point": _clip(getattr(x, "vibe_point", ""), MAX_VIBE_CHARS),
         })
 
+    # ✅ Actions 출력 고정용: 모델이 요약하지 않도록 "완성본 텍스트"도 같이 제공
+    lines = []
+    for i, it in enumerate(items, start=1):
+        lines.append(
+            f"{i}) {it.get('movie','')} | 장면: {it.get('scene','')} | 비하인드: {it.get('behind','')} | 포인트: {it.get('vibe_point','')}"
+        )
+    output = "\n".join(lines)
+
     resp = {
         "ok": True,
         "k": req.k,
         "n": n_eff,
-        "count": len(items),
+        "count": len(items),    "output": output,
+
         "items": items,
     }
 
