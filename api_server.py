@@ -3,6 +3,9 @@ import re
 from fastapi import FastAPI, HTTPException, Header
 from pydantic import BaseModel, Field
 
+import copy
+from fastapi.responses import JSONResponse
+
 from main import load_forbidden, generate_candidates, filter_candidates, write_final
 
 from response_budget import enforce_response_budget
@@ -125,3 +128,30 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
 
     resp = enforce_response_budget(resp)
     return resp
+
+
+# --- Actions-friendly OpenAPI (forces 3.0.2) ---
+def _actions_openapi_spec():
+    spec = copy.deepcopy(app.openapi())
+    spec["openapi"] = "3.0.2"
+    spec["servers"] = [{"url": "https://movie-filter-api.onrender.com"}]
+    spec.setdefault("components", {}).setdefault("securitySchemes", {})
+    spec["components"]["securitySchemes"]["bearerAuth"] = {"type": "http", "scheme": "bearer"}
+
+    # /generate만 bearerAuth 적용
+    try:
+        spec["paths"]["/generate"]["post"]["security"] = [{"bearerAuth": []}]
+    except Exception:
+        pass
+
+    # /health는 공개
+    try:
+        spec["paths"]["/health"]["get"].pop("security", None)
+    except Exception:
+        pass
+
+    return spec
+
+@app.get("/actions_openapi.json", include_in_schema=False)
+def actions_openapi():
+    return JSONResponse(_actions_openapi_spec())
