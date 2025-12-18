@@ -13,6 +13,8 @@ app = FastAPI(
     servers=[{"url": "https://movie-filter-api.onrender.com"}],
 )
 
+app.openapi_version = "3.0.2"
+
 ACTION_API_KEY = os.getenv("ACTION_API_KEY", "")
 
 def require_auth(authorization: str | None):
