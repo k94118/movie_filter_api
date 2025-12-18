@@ -5,6 +5,8 @@ from pydantic import BaseModel, Field
 
 from main import load_forbidden, generate_candidates, filter_candidates, write_final
 
+from response_budget import enforce_response_budget
+
 app = FastAPI(
     title="Movie Filter API",
     version="1.0.0",
@@ -110,4 +112,13 @@ def generate(req: GenerateReq, authorization: str | None = Header(default=None))
             "vibe_point": _clip(getattr(x, "vibe_point", ""), MAX_VIBE_CHARS),
         })
 
-    return {"items": items}
+    resp = {
+        "ok": True,
+        "k": req.k,
+        "n": req.n,
+        "count": len(items),
+        "items": items,
+    }
+
+    resp = enforce_response_budget(resp)
+    return resp
