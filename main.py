@@ -3,6 +3,9 @@ from typing import List
 from pydantic import BaseModel
 from openai import OpenAI
 
+import copy
+from fastapi.responses import JSONResponse
+
 client = OpenAI()
 
 class Candidate(BaseModel):
@@ -108,3 +111,25 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# --- Actions-friendly OpenAPI (forces 3.0.2) ---
+def _actions_openapi_spec():
+    spec = copy.deepcopy(app.openapi())
+    spec["openapi"] = "3.0.2"
+    spec["servers"] = [{"url": "https://movie-filter-api.onrender.com"}]
+    spec.setdefault("components", {}).setdefault("securitySchemes", {})
+    spec["components"]["securitySchemes"]["bearerAuth"] = {"type": "http", "scheme": "bearer"}
+    try:
+        spec["paths"]["/generate"]["post"]["security"] = [{"bearerAuth": []}]
+    except Exception:
+        pass
+    try:
+        spec["paths"]["/health"]["get"].pop("security", None)
+    except Exception:
+        pass
+    return spec
+
+@app.get("/actions_openapi.json", include_in_schema=False)
+def actions_openapi():
+    return JSONResponse(_actions_openapi_spec())
