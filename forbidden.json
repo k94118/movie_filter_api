@@ -1,0 +1,20 @@
+[
+  {
+    "fid": "F001",
+    "movie": "Titanic",
+    "scene_keys": ["ship_tilt", "people_slide", "deck_fall"],
+    "trick_keys": ["stunt_rollers", "limited_tilt_set"]
+  },
+  {
+    "fid": "F002",
+    "movie": "The Matrix",
+    "scene_keys": ["rooftop", "bullet_dodge", "bullet_time"],
+    "trick_keys": ["ring_cameras", "frame_stitching"]
+  },
+  {
+    "fid": "F003",
+    "movie": "Alien",
+    "scene_keys": ["chestburst", "meal_scene", "sudden_reveal"],
+    "trick_keys": ["hidden_rig", "blood_jet", "actor_surprise"]
+  }
+]
