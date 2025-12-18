@@ -1,177 +1,100 @@
 {
   "openapi": "3.0.2",
   "info": {
-    "title": "Movie Filter API",
+    "title": "Movie Filter API (Actions)",
     "version": "1.0.0"
   },
   "servers": [
-    {
-      "url": "https://movie-filter-api.onrender.com"
-    }
+    { "url": "https://movie-filter-api.onrender.com" }
   ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": { "type": "http", "scheme": "bearer" }
+    },
+    "schemas": {
+      "GenerateRequest": {
+        "type": "object",
+        "required": ["style_hint"],
+        "properties": {
+          "style_hint": { "type": "string", "maxLength": 500 },
+          "k": { "type": "integer", "minimum": 1, "maximum": 10, "default": 10 },
+          "n": { "type": "integer", "minimum": 1, "maximum": 80, "default": 10 }
+        }
+      },
+      "Item": {
+        "type": "object",
+        "required": ["movie", "scene", "behind", "vibe_point"],
+        "properties": {
+          "movie": { "type": "string", "maxLength": 80 },
+          "scene": { "type": "string", "maxLength": 140 },
+          "behind": { "type": "string", "maxLength": 160 },
+          "vibe_point": { "type": "string", "maxLength": 120 }
+        }
+      },
+      "GenerateResponse": {
+        "type": "object",
+        "required": ["ok", "k", "n", "count", "items"],
+        "properties": {
+          "ok": { "type": "boolean" },
+          "k": { "type": "integer" },
+          "n": { "type": "integer" },
+          "count": { "type": "integer" },
+          "items": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/Item" }
+          }
+        }
+      },
+      "HealthResponse": {
+        "type": "object",
+        "required": ["ok"],
+        "properties": {
+          "ok": { "type": "boolean" }
+        }
+      }
+    }
+  },
   "paths": {
     "/health": {
       "get": {
-        "summary": "Health",
-        "operationId": "health_health_get",
+        "operationId": "health",
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": { "$ref": "#/components/schemas/HealthResponse" }
               }
             }
           }
-        },
-        "description": ""
+        }
       }
     },
     "/generate": {
       "post": {
-        "summary": "Generate",
-        "operationId": "generate_generate_post",
-        "parameters": [
-          {
-            "name": "authorization",
-            "in": "header",
-            "required": false,
-            "schema": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "null"
-                }
-              ],
-              "title": "Authorization"
-            },
-            "description": ""
-          }
-        ],
+        "operationId": "generate",
+        "security": [{ "bearerAuth": [] }],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/GenerateReq"
-              }
+              "schema": { "$ref": "#/components/schemas/GenerateRequest" }
             }
           }
         },
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "OK",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": { "$ref": "#/components/schemas/GenerateResponse" }
               }
             }
           },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ],
-        "description": ""
-      }
-    }
-  },
-  "components": {
-    "schemas": {
-      "GenerateReq": {
-        "properties": {
-          "style_hint": {
-            "type": "string",
-            "title": "Style Hint",
-            "description": "원하는 분위기/느낌 요약"
-          },
-          "k": {
-            "type": "integer",
-            "maximum": 10.0,
-            "minimum": 1.0,
-            "title": "K",
-            "description": "최종 출력 개수 (기본 10)",
-            "default": 10
-          },
-          "n": {
-            "type": "integer",
-            "maximum": 80.0,
-            "minimum": 1.0,
-            "title": "N",
-            "description": "후보 생성 개수 (입력 1~80 허용, 서버에서 최소 10으로 보정)",
-            "default": 10
-          }
-        },
-        "type": "object",
-        "required": [
-          "style_hint"
-        ],
-        "title": "GenerateReq"
-      },
-      "HTTPValidationError": {
-        "properties": {
-          "detail": {
-            "items": {
-              "$ref": "#/components/schemas/ValidationError"
-            },
-            "type": "array",
-            "title": "Detail"
-          }
-        },
-        "type": "object",
-        "title": "HTTPValidationError"
-      },
-      "ValidationError": {
-        "properties": {
-          "loc": {
-            "items": {
-              "anyOf": [
-                {
-                  "type": "string"
-                },
-                {
-                  "type": "integer"
-                }
-              ]
-            },
-            "type": "array",
-            "title": "Location"
-          },
-          "msg": {
-            "type": "string",
-            "title": "Message"
-          },
-          "type": {
-            "type": "string",
-            "title": "Error Type"
-          }
-        },
-        "type": "object",
-        "required": [
-          "loc",
-          "msg",
-          "type"
-        ],
-        "title": "ValidationError"
-      }
-    },
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+          "401": { "description": "Missing Authorization" },
+          "403": { "description": "Invalid API key" },
+          "422": { "description": "Validation error" }
+        }
       }
     }
   }
